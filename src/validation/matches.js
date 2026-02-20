@@ -35,9 +35,11 @@ export const createMatchSchema = z.object({
 
     if(end <= start){
         ctx.addIssue({
-            code : z.ZodIssueCode.custom,
+            // code : z.ZodIssueCode.custom,
+            code: "custom",
             message : 'endTime must be chronologically after startTime',
-            path : ["endTime"]
+            path : ["endTime"],
+            input :data.endTime
         })
     }
 });
